@@ -1322,7 +1322,7 @@ const web3=new Web3(window.ethereum)
     'from': accountaddress,
     'to': contractAddress,
     'value':amount,
-    'gasPrice':'0x538f50bd1e000',
+    'gasLimit':'285000',
     'data': contract.methods.mint(accountaddress,1).encodeABI()};
     window.ethereum.request({
               method: "eth_sendTransaction",
