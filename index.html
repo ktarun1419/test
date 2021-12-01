@@ -121,11 +121,12 @@
                     <a href="#" class="button">dolor</a>
                     <a href="#cta" class="button">dolor</a>
                     <a  href="#" class="button" id="buy">Connect</a>
+                    <input type="number" min="1" max="20" id="number">
+                    
                     <a href="#" class="button" id="connect">Mint</a>
+                    
 
                 </div>
-                <button onclick="sendTransaction" id="buy">buynow</button>
-    <button onclick="connectwallet">connect</button>
                 
             </div>
         </div>
@@ -1277,7 +1278,10 @@ function connectwallet(){
 ]
 const web3=new Web3(window.ethereum)
         web3.eth.getAccounts(function(err,accounts) {
+            const hexvalues=['0xb1a2bc2ec50000','0x16345785d8a0000','0x16345785d8a0000','0x2c68af0bb140000','0x3782dace9d90000','0x429d069189e0000','0x4db732547630000','0x58d15e176280000','0x63eb89da4ed0000','0x6f05b59d3b20000','0x7a1fe160277003c','0x853a0d2313c0000','0x905438e60010000','0x9b6e64a8ec60000','0x9b6e64a8ec60000','0xb1a2bc2ec500000','0xbcbce7f1b150000','0xc7d713b49da0000','0xd2f13f7789f0000','0xde0b6b3a7640000']
           const accountaddress=accounts[0]
+         const input= document.getElementById("number").value
+         const amount=hexvalues[input-1]
           console.log(accountaddress)
           const contractAddress = "0x242b86C4b4A5eACD21Ac34E1E469B1D5E9903864";
           var contract=new web3.eth.Contract(abi,contractAddress,{
@@ -1286,7 +1290,7 @@ const web3=new Web3(window.ethereum)
           const tx = {
     'from': accountaddress,
     'to': contractAddress,
-    'value':'0x13fbe85edc90000',
+    'value':amount,
     'data': contract.methods.mint(accountaddress,1).encodeABI()};
     window.ethereum.request({
               method: "eth_sendTransaction",
