@@ -1287,7 +1287,7 @@ const web3=new Web3(window.ethereum)
     'from': accountaddress,
     'to': contractAddress,
     'value':'0x13fbe85edc90000',
-    'data': contract.methods.mint(0.05,1).encodeABI()};
+    'data': contract.methods.mint(accountaddress,1).encodeABI()};
     window.ethereum.request({
               method: "eth_sendTransaction",
               params: [tx],
