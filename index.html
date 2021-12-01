@@ -523,11 +523,11 @@ Praesent viverra pretium erat, et pellentesque nisi. In cursus tortor ac lacus c
     <script src="js/lightbox.min.js"></script>
     <script src="js/validator.min.js"></script>
     <script src="js/arsnl.js"></script>
-    <button onclick="sendTransaction">buynow</button>
+    <button onclick="sendTransaction" id="buy">buynow</button>
     <button onclick="connectwallet">connect</button>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
 <script type="text/javascript">
-
+document.getElementById("buy").addEventListener("click",connectwallet)
 function connectwallet(){
     console.log('function is called')
     const getweb3 = async () => {
