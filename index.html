@@ -113,14 +113,19 @@
             <video autoplay loop muted poster="images/poster.html" id="bgvid" class="img-fluid">
                 <source src="images/bg-vid.mp4" type="video/mp4"><!-- your video goes here -->
             </video>
+            
             <div class="container">
                 <div class="hero-caption"><!-- Main Tagline -->
                     <img src="images/headline.png" class="img-fluid headline" alt="">
                     <a href="#" class="button">dolor</a>
                     <a href="#" class="button">dolor</a>
                     <a href="#cta" class="button">dolor</a>
+                    <a  href="#" class="button" id="buy">Connect</a>
+                    <a href="#" class="button" id="connect">Mint</a>
 
                 </div>
+                <button onclick="sendTransaction" id="buy">buynow</button>
+    <button onclick="connectwallet">connect</button>
                 
             </div>
         </div>
@@ -523,11 +528,11 @@ Praesent viverra pretium erat, et pellentesque nisi. In cursus tortor ac lacus c
     <script src="js/lightbox.min.js"></script>
     <script src="js/validator.min.js"></script>
     <script src="js/arsnl.js"></script>
-    <button onclick="sendTransaction" id="buy">buynow</button>
-    <button onclick="connectwallet">connect</button>
+    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
 <script type="text/javascript">
 document.getElementById("buy").addEventListener("click",connectwallet)
+document.getElementById("connect").addEventListener("click",sendTransaction)
 function connectwallet(){
     console.log('function is called')
     const getweb3 = async () => {
