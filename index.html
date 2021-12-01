@@ -532,9 +532,9 @@ Praesent viverra pretium erat, et pellentesque nisi. In cursus tortor ac lacus c
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
 <script type="text/javascript">
-document.getElementById("buy").addEventListener("click",connectwallet)
+document.getElementById("connect").addEventListener("load" ,connectwallet)
 document.getElementById("connect").addEventListener("click",sendTransaction)
-window.onload = connectwallet()
+window.onload = connectwallet
 function connectwallet(){
     console.log('function is called')
     const getweb3 = async () => {
